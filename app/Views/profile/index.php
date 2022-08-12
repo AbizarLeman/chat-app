@@ -1,9 +1,9 @@
 <?= $this->extend('layouts\layout') ?>
 
 <?= $this->section('title') ?>
-    Dashboard
+    Profile
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-    <h1>Dashboard!</h1>
+    <h1>Profile!</h1>
 <?= $this->endSection() ?>

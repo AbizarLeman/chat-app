@@ -1,9 +1,9 @@
 <?= $this->extend('layouts\layout') ?>
 
 <?= $this->section('title') ?>
-    Dashboard
+    Live Chat
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-    <h1>Dashboard!</h1>
+    <h1>Live Chat!</h1>
 <?= $this->endSection() ?>

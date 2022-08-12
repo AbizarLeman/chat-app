@@ -16,13 +16,13 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    <a class="nav-link active" aria-current="page" href="<?php echo site_url('/')?>">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Profile</a>
+                    <a class="nav-link active" aria-current="page" href="<?php echo site_url('/Profile')?>">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Live Chat</a>
+                    <a class="nav-link active" href="<?php echo site_url('/Chat')?>">Live Chat</a>
                 </li>
             </ul>
             <div class="d-flex">
