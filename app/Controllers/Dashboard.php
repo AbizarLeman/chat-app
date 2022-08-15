@@ -12,7 +12,7 @@ class Dashboard extends BaseController
 
     public function index()
     {
-        if ($this->session->username) {
+        if ($this->session->session_data) {
             return view('dashboard');
         }
 

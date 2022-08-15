@@ -49,12 +49,19 @@ class LoginController extends ShieldLogin
         $remember = (bool) $this->request->getPost('remember');
 
 
-        $sessionData = [
+        $session_data = [
             'username'  => $this->request->getPost('username'),
             'logged_in' => true,
         ];
         
-        $this->session->set($sessionData);
+        $this->session->set(['session_data' => $session_data]);
+
+        return redirect()->to('/');
+    }
+
+    public function logoutAction(): RedirectResponse
+    {   
+        $this->session->remove('session_data');
 
         return redirect()->to('/');
     }
