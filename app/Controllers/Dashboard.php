@@ -4,8 +4,18 @@ namespace App\Controllers;
 
 class Dashboard extends BaseController
 {
+    public $session;
+
+    public function __construct() {
+        $this->session = \Config\Services::session();
+    }
+
     public function index()
     {
-        return view('dashboard');
+        if ($this->session->username) {
+            return view('dashboard');
+        }
+
+        return view('auth/login');
     }
 }

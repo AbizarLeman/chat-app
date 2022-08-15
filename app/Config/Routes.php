@@ -2,6 +2,9 @@
 
 namespace Config;
 
+use CodeIgniter\Shield\Controllers\ActionController;
+use CodeIgniter\Shield\Controllers\RegisterController;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -35,6 +38,22 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+$routes->get('/auth-action-show', 'Auth\ActionController::show');
+$routes->post('/auth-action-handle', 'Auth\ActionController::handle');
+$routes->post('/auth-action-verify', 'Auth\ActionController::verify');
+
+$routes->get('/register', 'Auth\RegisterController::registerView');
+$routes->post('/register', 'Auth\RegisterController::registerAction');
+
+$routes->get('/login', 'Auth\LoginController::loginView');
+$routes->post('/login', 'Auth\LoginController::loginAction');
+$routes->get('/logout', 'Auth\LoginController::logoutAction');
+
+// $routes->get('/email/login', 'Auth\MagicLinkController::loginView');
+// $routes->post('/email/login', 'Auth\MagicLinkController::loginAction');
+// $routes->get('/verify', 'Auth\MagicLinkController::verify');
+
 $routes->get('/', 'Dashboard::index');
 $routes->get('/Profile', 'Profile::index');
 $routes->get('/Chat', 'LiveChat::index');

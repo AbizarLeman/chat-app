@@ -26,7 +26,9 @@
                 </li>
             </ul>
             <div class="d-flex">
-                <button class="btn btn-outline-light" type="submit">Logout</button>
+                <button class="btn btn-outline-light">
+                    <a class="nav-link active" href="<?php echo site_url('/logout')?>">Logout</a>
+                </button>
             </div>
         </div>
         </div>
