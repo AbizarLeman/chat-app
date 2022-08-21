@@ -50,6 +50,7 @@ class LoginController extends ShieldLogin
 
 
         $session_data = [
+            'user_account_id' => $userEntity->user_account_id,
             'username'  => $this->request->getPost('username'),
             'logged_in' => true,
         ];

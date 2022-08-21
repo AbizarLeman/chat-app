@@ -15,6 +15,11 @@ class AddProfiles extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'user_account_id'          => [
+                'type'           => 'INT',
+                'constraint'     => 5,
+                'unsigned'       => true,
+            ],
             'fullname' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
@@ -49,6 +54,7 @@ class AddProfiles extends Migration
             'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
         ]);
         $this->forge->addKey('profile_id', true);
+        $this->forge->addForeignKey('user_account_id', 'user_account', 'user_account_id');
         $this->forge->createTable('profile');
     }
 

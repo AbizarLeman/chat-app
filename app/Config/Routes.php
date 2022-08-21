@@ -55,7 +55,10 @@ $routes->get('/logout', 'Auth\LoginController::logoutAction');
 // $routes->get('/verify', 'Auth\MagicLinkController::verify');
 
 $routes->get('/', 'Dashboard::index');
+
 $routes->get('/Profile', 'Profile::index');
+$routes->post('/Profile/Create', 'Profile::save');
+
 $routes->get('/Chat', 'LiveChat::index');
 
 /*
