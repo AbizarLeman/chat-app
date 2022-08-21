@@ -25,8 +25,7 @@ class ProfileModel extends Model
 
     protected $returnType = ProfileEntity::class;
 
-    public function findByUserAccountID(string $id): ?ProfileEntity
-    {
+    public function findByUserAccountID(string $id) {
         return $this->where('user_account_id', $id)->first();
     }
 }

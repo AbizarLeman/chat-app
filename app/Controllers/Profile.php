@@ -4,25 +4,24 @@ namespace App\Controllers;
 
 use App\Models\ProfileModel;
 use App\Entities\ProfileEntity;
+use App\Services\ProfileService;
 
 class Profile extends BaseController
 {
-    protected $profileModel;
+    protected $session;
+    protected $profile_service;
 
-    public function __construct() {
+    public function __construct($_profile_service = new ProfileService()) {
         $this->session = \Config\Services::session();
-        $this->profileModel = new ProfileModel();
+        $this->profile_service = $_profile_service;
     }
     
     public function index()
     {
         if ($this->session->session_data) {
-            $profile = $this->profileModel->findByUserAccountID($this->session->session_data['user_account_id']);
+            $profile = $this->profile_service->getProfileByUserAccountID($this->session->session_data['user_account_id']);
 
-            if($profile) {
-                $date = date_create($profile->date_of_birth);
-                $profile->date_of_birth = date_format($date,"Y-m-d");
-                
+            if($profile) {                
                 return view('profile/view_profile', ['profile' => $profile]);
             } else {
                 return view('profile/create_profile');
@@ -35,13 +34,11 @@ class Profile extends BaseController
     public function save()
     {
         if ($this->session->session_data) {
-            $profileEntity = new ProfileEntity();
-            $profileEntity = $profileEntity->fill($this->request->getPost());
-            $profileEntity->user_account_id = $this->session->session_data['user_account_id'];
-            
-            $result = $this->profileModel->save($profileEntity);
+            $profile_entity = new ProfileEntity();
+            $profile_entity = $profile_entity->fill($this->request->getPost());
+            $profile_entity->user_account_id = $this->session->session_data['user_account_id'];
 
-            if ($result) {
+            if ($this->profile_service->createProfile($profile_entity)) {
                 return redirect()->to('/Profile');
             } else {
                 //TODO: Add error message
@@ -55,12 +52,9 @@ class Profile extends BaseController
     public function edit()
     {
         if ($this->session->session_data) {
-            $profile = $this->profileModel->findByUserAccountID($this->session->session_data['user_account_id']);
+            $profile = $this->profile_service->getProfileByUserAccountID($this->session->session_data['user_account_id']);
 
-            if($profile) {
-                $date = date_create($profile->date_of_birth);
-                $profile->date_of_birth = date_format($date,"Y-m-d");
-                
+            if($profile) {                
                 return view('profile/edit_profile', ['profile' => $profile]);
             } else {
                 return redirect()->to('/Profile');
@@ -73,13 +67,11 @@ class Profile extends BaseController
     public function update()
     {
         if ($this->session->session_data) {
-            $profileEntity = new ProfileEntity();
-            $profileEntity = $profileEntity->fill($this->request->getPost());
-            $profileEntity->user_account_id = $this->session->session_data['user_account_id'];
-            
-            $result = $this->profileModel->update($profileEntity->profile_id, $profileEntity);
+            $profile_entity = new ProfileEntity();
+            $profile_entity = $profile_entity->fill($this->request->getPost());
+            $profile_entity->user_account_id = $this->session->session_data['user_account_id'];
 
-            if ($result) {
+            if ($this->profile_service->updateProfile($profile_entity)) {
                 return redirect()->to('/Profile');
             } else {
                 //TODO: Add error message
