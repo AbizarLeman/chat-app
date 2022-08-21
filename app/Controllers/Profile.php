@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Entities\ProfileEntity;
 use App\Services\ProfileService;
 
 class Profile extends BaseController
