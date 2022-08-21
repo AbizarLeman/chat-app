@@ -15,8 +15,8 @@ class ProfileService implements ProfileServiceInterface {
 
     protected $profile_model;
 
-    public function __construct() {
-        $this->profile_model = new ProfileModel();
+    public function __construct($_profile_model = new ProfileModel()) {
+        $this->profile_model = $_profile_model;
     }
 
     public function createProfile($profile_entity) : bool {
