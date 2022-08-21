@@ -57,7 +57,9 @@ $routes->get('/logout', 'Auth\LoginController::logoutAction');
 $routes->get('/', 'Dashboard::index');
 
 $routes->get('/Profile', 'Profile::index');
-$routes->post('/Profile/Create', 'Profile::save');
+$routes->post('/Profile/Save', 'Profile::save');
+$routes->get('/Profile/Edit', 'Profile::edit');
+$routes->post('/Profile/Update', 'Profile::update');
 
 $routes->get('/Chat', 'LiveChat::index');
 

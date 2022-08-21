@@ -9,8 +9,8 @@ use Exception;
 class ProfileModel extends Model
 {
     protected $table = 'profile';
+    protected $primaryKey = 'profile_id';
     protected $allowedFields = [
-        'profile_id',
         'user_account_id',
         'fullname',
         'address',

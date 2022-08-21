@@ -6,9 +6,11 @@
 
 <?= $this->section('content') ?>
     <div class="container" style="margin-bottom: 20vh;">
-        <form method="post" action="<?php echo site_url('Profile/Create'); ?>">
-            <div class="row">
-                <div class="col text-center" style="margin: 10vh;"><h1>Create Profile</h1></div>
+        <form method="post" action="<?php echo site_url('Profile/Save'); ?>">
+            <div class="row d-flex flex-row">
+                <div class="col text-center">
+                    <div style="margin: 10vh;"><h1>Create Profile</h1></div>
+                </div>
             </div>
             <div class="row" style="margin: 2vh;">
                 <div class="col-6">
