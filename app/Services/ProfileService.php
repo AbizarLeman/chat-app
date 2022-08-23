@@ -37,6 +37,17 @@ class ProfileService implements ProfileServiceInterface {
         }
     }
 
+    public function getProfile($id) {
+        $profile = $this->profile_model->find($id);
+
+        if ($profile) {
+            $date = date_create($profile->date_of_birth);
+            $profile->date_of_birth = date_format($date,"Y-m-d");
+
+            return $profile;
+        }
+    }
+
     public function getProfileByUserAccountID($user_account_id) {
         $profile = $this->profile_model->findByUserAccountID($user_account_id);
 
