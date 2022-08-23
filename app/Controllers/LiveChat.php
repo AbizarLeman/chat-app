@@ -23,7 +23,7 @@ class LiveChat extends BaseController
             if($profile) {                
                 $profiles = $this->profile_service->getAllProfile();
 
-                return view('live_chat/live_chat', ['profiles' => $profiles, 'user_account_id' => $this->session->session_data['user_account_id']]);
+                return view('live_chat/profile_list', ['profiles' => $profiles, 'user_account_id' => $this->session->session_data['user_account_id']]);
             } else {
                 return view('live_chat/no_profile');
             }
@@ -35,9 +35,9 @@ class LiveChat extends BaseController
     public function chat($id)
     {
         if ($this->session->session_data) {
-            $profiles = $this->profile_service->getAllProfile();
 
-            return view('live_chat/live_chat', ['profiles' => $profiles]);
+
+            return view('live_chat/live_chat');
         }
 
         return view('auth/login');

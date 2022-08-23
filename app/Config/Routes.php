@@ -62,6 +62,7 @@ $routes->get('/Profile/Edit', 'Profile::edit');
 $routes->post('/Profile/Update', 'Profile::update');
 
 $routes->get('/Chat', 'LiveChat::index');
+$routes->get('/Chat/(:num)', 'LiveChat::chat/$1');
 
 /*
  * --------------------------------------------------------------------
