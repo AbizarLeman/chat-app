@@ -26,7 +26,7 @@
             <div class="row" style="margin-left: 1rem;margin-right: 1rem;">
                 <div class="col accordion" id="accordionExample" style="margin-top: 2rem;">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
+                        <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <label class="form-label"><h3>Contact</h3></label>
                             </button>
@@ -77,8 +77,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="padding: 1rem;position: fixed;left: 0;right: 0;bottom: 0;width: 100%;background-color: grey;justify-content: right;align-items: center;z-index: 10;">
-                <div class="col-md-3">
+            <div class="row" style="padding: 1rem;position: fixed;left: 0;right: 0;bottom: 0;width: 100%;background-color: black;justify-content: left;align-items: center;z-index: 10;">
+                <div class="col-md-2">
                     <div class="d-grid">
                         <button class="btn btn-dark" type="button" onclick="location.href='<?php echo site_url('Profile/Edit'); ?>'">Edit Profile</button>
                     </div>

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="<?php echo base_url('bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link type="text/css" href="<?php echo base_url('style.css'); ?>" rel="stylesheet">
     <title><?= $this->renderSection('title') ?></title>
 </head>
 <body>
