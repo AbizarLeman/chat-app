@@ -1,7 +1,7 @@
 <?= $this->extend('layouts\layout') ?>
 
 <?= $this->section('title') ?>
-    Dashboard
+    Live Chat
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -20,26 +20,30 @@
                         <hr style="border-top: 1px solid #bbb;">
                         <div class="row d-flex justify-content-center" id="chatContainer">
                             <?php
-                                $position = "";
-                                $background_color = "";
-
-                                foreach ($messages as $message) {
-                                    $date = date_create($message->created_at);
-
-                                    if ($message->receiver_user_account_id == $user_account_id) {
-                                        $position = "left: -15%;";
-                                        $color = "#bbb";
-                                    } else {
-                                        $position = "left: 15%;";
-                                        $color = "black";
+                                if (!empty($messages)) {
+                                    $position = "";
+                                    $background_color = "";
+    
+                                    foreach ($messages as $message) {
+                                        $date = date_create($message->created_at);
+    
+                                        if ($message->receiver_user_account_id == $user_account_id) {
+                                            $position = "left: -15%;";
+                                            $color = "#bbb";
+                                        } else {
+                                            $position = "left: 15%;";
+                                            $color = "black";
+                                        }
+    
+                                        echo '
+                                            <div style="position: relative;'.$position.';width: 60%;color: white;background-color: '.$color.';margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;">
+                                                <p class="card-text">'.$message->message.'</p>
+                                                <p class="card-text" style="font-size: 0.7rem;">'.date_format($date,"m/d/Y").' '.date_format($date,"H:i").'</p>
+                                            </div>
+                                        ';
                                     }
-
-                                    echo '
-                                        <div style="position: relative;'.$position.';width: 60%;color: white;background-color: '.$color.';margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;">
-                                            <p class="card-text">'.$message->message.'</p>
-                                            <p class="card-text" style="font-size: 0.7rem;">'.date_format($date,"m/d/Y").' '.date_format($date,"H:i").'</p>
-                                        </div>
-                                    ';
+                                } else {
+                                    echo '<p class="card-text text-center" style="color: grey;">Say hi to '.$profile->fullname.'!</p>';
                                 }
                             ?>
                         </div>
