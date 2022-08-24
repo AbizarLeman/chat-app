@@ -12,6 +12,17 @@
             </div>
         </div>
         <hr style="border-top: 3px solid #bbb;">
+        <?php 
+            if(isset($errors)) {
+                foreach ($errors as $error) {
+                    echo '
+                        <div class="alert alert-danger" role="alert">
+                            '.$error.'
+                        </div>
+                    ';
+                }
+            }
+        ?>
         <form method="post" action="<?php echo site_url('Profile/Save'); ?>">
             <div class="row" style="margin-left: 1rem;margin-right: 1rem;">
                 <div class="col-md-6" style="margin-top: 1rem;">

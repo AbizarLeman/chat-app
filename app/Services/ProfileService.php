@@ -6,7 +6,7 @@ use App\Models\ProfileModel;
 use App\Entities\ProfileEntity;
 
 interface ProfileServiceInterface {
-    public function createProfile($profile_entity) : bool;
+    public function createProfile($profile_entity);
     public function getAllProfile();
     public function getProfileByUserAccountID($user_account_id);
     public function updateProfile($profile_entity): bool;
@@ -20,8 +20,14 @@ class ProfileService implements ProfileServiceInterface {
         $this->profile_model = $_profile_model;
     }
 
-    public function createProfile($profile_entity) : bool {
-        return $this->profile_model->save($profile_entity);
+    public function createProfile($profile_entity) {
+        $result = $this->profile_model->save($profile_entity);
+
+        if (empty($this->profile_model->errors())) {
+            return $result;
+        } else {
+            return $this->profile_model->errors();
+        }
     }
 
     public function getAllProfile() {
