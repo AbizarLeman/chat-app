@@ -36,16 +36,4 @@
             ?>
         </div>
     </div>
-    <script>
-        var conn = new WebSocket('ws://localhost:9788');
-
-        conn.onopen = function(e) {
-            console.log(conn);
-            console.log("Connection established!");
-        };
-
-        conn.onmessage = function(e) {
-            console.log(JSON.parse(e.data));
-        };
-    </script>
 <?= $this->endSection() ?>

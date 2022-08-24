@@ -37,7 +37,7 @@ class LiveChat extends BaseController
         if ($this->session->session_data) {
             $profile = $this->profile_service->getProfile($id);
 
-            return view('live_chat/live_chat', ['profile' => $profile]);
+            return view('live_chat/live_chat', ['profile' => $profile, 'user_account_id' => $this->session->session_data['user_account_id']]);
         }
 
         return view('auth/login');

@@ -29,8 +29,8 @@
                         </div>
                         <div class="row d-flex justify-content-center">
                             <div class="input-group" style="width: 95%; margin-bottom: 1rem;">
-                                <input type="text" class="form-control" placeholder="Send message...">
-                                <button class="btn btn-dark" type="button">Send</button>
+                                <input type="text" class="form-control" id="messageInput" placeholder="Send message...">
+                                <button class="btn btn-dark" type="button" onclick="sendMessage()">Send</button>
                             </div>
                         </div>
                     </div>
@@ -129,9 +129,31 @@
         </div>
     </div>
     <script>
+        const conn = new WebSocket('ws://localhost:9788?sender_user_account_id=<?php echo (isset($user_account_id)) ? $user_account_id : null; ?>&receiver_user_account_id=<?php echo (isset($profile->user_account_id)) ? $profile->user_account_id : null; ?>')
+        const messageInput = document.getElementById("messageInput")
+
+        conn.onopen = function(e) {
+            console.log("Connection established!")
+        }
+
+        conn.onmessage = function(e) {
+            console.log(e.data)
+        }
+
+        const sendMessage = () => {
+            conn.send(messageInput.value)
+            messageInput.value = ""
+        }
+
+        messageInput.addEventListener("keydown", (e) => {
+            if (e.code === "Enter") { 
+                sendMessage()
+            }
+        })
+
         const showModal = () => {
-            let profileModal = new bootstrap.Modal(document.getElementById("profileModal"));
-            profileModal.show();
-        };
+            let profileModal = new bootstrap.Modal(document.getElementById("profileModal"))
+            profileModal.show()
+        }
      </script>
 <?= $this->endSection() ?>
