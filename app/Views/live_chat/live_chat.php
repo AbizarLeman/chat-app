@@ -15,7 +15,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-body" style="max-height: 50vh;overflow: auto;">
+                    <div class="card-body" style="max-height: 50vh;overflow: auto;" id="chatBox">
                         <h5 class="card-title text-center">Chat</h5>
                         <hr style="border-top: 1px solid #bbb;">
                         <div class="row d-flex justify-content-center" id="chatContainer">
@@ -133,6 +133,11 @@
         const messageInput = document.getElementById("messageInput")
         const chatContainer = document.getElementById("chatContainer")
 
+        const setScrollOnBottom = () => {
+            const chatBox = document.getElementById("chatBox")
+            chatBox.scrollTop = chatBox.scrollHeight
+        }
+
         conn.onopen = function(e) {
             console.log("Connection established!")
         }
@@ -143,6 +148,7 @@
             messageBubble.style.cssText = "position: relative;left: -10%;width: 70%;color: white;background-color: #bbb;margin-top: 1rem;padding: 1rem;border-radius: 1rem;"
             messageBubble.innerHTML = `<p class="card-text">${e.data}</p>`
             chatContainer.append(messageBubble)
+            setScrollOnBottom()
         }
 
         const sendMessage = () => {
@@ -154,6 +160,7 @@
 
             conn.send(messageInput.value)
             messageInput.value = ""
+            setScrollOnBottom()
         }
 
         messageInput.addEventListener("keydown", (e) => {
@@ -166,5 +173,9 @@
             let profileModal = new bootstrap.Modal(document.getElementById("profileModal"))
             profileModal.show()
         }
+
+        window.addEventListener('load', () => {
+            setScrollOnBottom()
+        }, false)
      </script>
 <?= $this->endSection() ?>
