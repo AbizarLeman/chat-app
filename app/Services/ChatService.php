@@ -31,14 +31,16 @@ class ChatService implements MessageComponentInterface {
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
+        $messageEntitiy = new MessageEntity;
+        
+        $messageEntitiy->sender_user_account_id = $from->sender_user_account_id;
+        $messageEntitiy->receiver_user_account_id = $from->receiver_user_account_id;
+        $messageEntitiy->message = $msg;
+
+        $this->message_service->createMessage($messageEntitiy);
+
         foreach ($this->connections as $connection) {
             if ($from !== $connection && $from->receiver_user_account_id === $connection->sender_user_account_id) {
-                $messageEntitiy = new MessageEntity;
-                $messageEntitiy->sender_user_account_id = $from->sender_user_account_id;
-                $messageEntitiy->receiver_user_account_id = $from->receiver_user_account_id;
-                $messageEntitiy->message = $msg;
-
-                $this->message_service->createMessage($messageEntitiy);
                 $connection->send($msg);
             }
         }

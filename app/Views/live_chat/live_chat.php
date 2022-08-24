@@ -19,14 +19,31 @@
                         <h5 class="card-title text-center">Chat</h5>
                         <hr style="border-top: 1px solid #bbb;">
                         <div class="row d-flex justify-content-center" id="chatContainer">
-                            <div style="position: relative;left: -10%;width: 70%;color: white;background-color: #bbb;margin-top: 1rem;padding: 1rem;border-radius: 1rem;">
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            </div>
-                            <div style="position: relative;left: 10%;width: 70%;color: white;background-color: #bbb;margin-top: 1rem;padding: 1rem;border-radius: 1rem;">
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nulla debitis maiores ea pariatur facere perspiciatis ducimus mollitia tempore at, deleniti consequatur quia blanditiis laboriosam molestias, velit, explicabo voluptas! Reprehenderit?</p>
-                            </div>
-                            </div>
+                            <?php
+                                $position = "";
+                                $background_color = "";
+
+                                foreach ($messages as $message) {
+                                    $date = date_create($message->created_at);
+
+                                    if ($message->receiver_user_account_id == $user_account_id) {
+                                        $position = "left: -15%;";
+                                        $color = "#bbb";
+                                    } else {
+                                        $position = "left: 15%;";
+                                        $color = "black";
+                                    }
+
+                                    echo '
+                                        <div style="position: relative;'.$position.';width: 60%;color: white;background-color: '.$color.';margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;">
+                                            <p class="card-text">'.$message->message.'</p>
+                                            <p class="card-text" style="font-size: 0.7rem;">'.date_format($date,"m/d/Y").' '.date_format($date,"H:i").'</p>
+                                        </div>
+                                    ';
+                                }
+                            ?>
                         </div>
+                        <hr style="border-top: 1px solid white;">
                         <div class="row d-flex justify-content-center">
                             <div class="input-group" style="width: 95%; margin-bottom: 1rem;">
                                 <input type="text" class="form-control" id="messageInput" placeholder="Send message...">
@@ -149,7 +166,7 @@
         conn.onmessage = function(e) {
             const messageBubble = document.createElement("div")
             
-            messageBubble.style.cssText = "position: relative;left: -10%;width: 70%;color: white;background-color: #bbb;margin-top: 1rem;padding: 1rem;border-radius: 1rem;"
+            messageBubble.style.cssText = "position: relative;left: -15%;width: 60%;color: white;background-color: #bbb;margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;"
             messageBubble.innerHTML = `<p class="card-text">${e.data}</p>`
             chatContainer.append(messageBubble)
             setScrollOnBottom()
@@ -158,7 +175,7 @@
         const sendMessage = () => {
             const messageBubble = document.createElement("div")
 
-            messageBubble.style.cssText = "position: relative;left: 10%;width: 70%;color: white;background-color: #bbb;margin-top: 1rem;padding: 1rem;border-radius: 1rem;"
+            messageBubble.style.cssText = "position: relative;left: 15%;width: 60%;color: white;background-color: black;margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;"
             messageBubble.innerHTML = `<p class="card-text">${messageInput.value}</p>`
             chatContainer.append(messageBubble)
 

@@ -44,6 +44,6 @@ class MessageModel extends Model
     protected $afterDelete    = [];
 
     public function getMessageListForChat($first_user_account_id, $second_user_account_id) {
-        return $this->where("(`receiver_user_account_id` = '$first_user_account_id' AND `sender_user_account_id` = '$second_user_account_id') OR (`receiver_user_account_id` = '$second_user_account_id' AND `sender_user_account_id` = '$first_user_account_id')")->get();
+        return $this->where("(`receiver_user_account_id` = '$first_user_account_id' AND `sender_user_account_id` = '$second_user_account_id') OR (`receiver_user_account_id` = '$second_user_account_id' AND `sender_user_account_id` = '$first_user_account_id')")->get()->getResult();
     }
 }
