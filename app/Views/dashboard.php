@@ -1,7 +1,7 @@
 <?= $this->extend('layouts\layout') ?>
 
 <?= $this->section('title') ?>
-    Dashboard
+    Chat App - Dashboard
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>

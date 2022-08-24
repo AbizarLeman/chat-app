@@ -1,7 +1,7 @@
 <?= $this->extend('layouts\layout') ?>
 
 <?= $this->section('title') ?>
-    Live Chat
+    Chat App - Live Chat
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>

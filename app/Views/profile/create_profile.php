@@ -1,7 +1,7 @@
 <?= $this->extend('layouts\layout') ?>
 
 <?= $this->section('title') ?>
-Create Profile
+    Chat App - Create Profile
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>

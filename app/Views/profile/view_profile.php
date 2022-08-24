@@ -1,7 +1,7 @@
 <?= $this->extend('layouts\layout') ?>
 
 <?= $this->section('title') ?>
-    View Profile
+    Chat App - View Profile
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
