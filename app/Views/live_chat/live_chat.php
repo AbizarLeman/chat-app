@@ -18,7 +18,7 @@
                     <div class="card-body" style="max-height: 50vh;overflow: auto;">
                         <h5 class="card-title text-center">Chat</h5>
                         <hr style="border-top: 1px solid #bbb;">
-                        <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center" id="chatContainer">
                             <div style="position: relative;left: -10%;width: 70%;color: white;background-color: #bbb;margin-top: 1rem;padding: 1rem;border-radius: 1rem;">
                                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
@@ -131,16 +131,27 @@
     <script>
         const conn = new WebSocket('ws://localhost:9788?sender_user_account_id=<?php echo (isset($user_account_id)) ? $user_account_id : null; ?>&receiver_user_account_id=<?php echo (isset($profile->user_account_id)) ? $profile->user_account_id : null; ?>')
         const messageInput = document.getElementById("messageInput")
+        const chatContainer = document.getElementById("chatContainer")
 
         conn.onopen = function(e) {
             console.log("Connection established!")
         }
 
         conn.onmessage = function(e) {
-            console.log(e.data)
+            const messageBubble = document.createElement("div")
+            
+            messageBubble.style.cssText = "position: relative;left: -10%;width: 70%;color: white;background-color: #bbb;margin-top: 1rem;padding: 1rem;border-radius: 1rem;"
+            messageBubble.innerHTML = `<p class="card-text">${e.data}</p>`
+            chatContainer.append(messageBubble)
         }
 
         const sendMessage = () => {
+            const messageBubble = document.createElement("div")
+
+            messageBubble.style.cssText = "position: relative;left: 10%;width: 70%;color: white;background-color: #bbb;margin-top: 1rem;padding: 1rem;border-radius: 1rem;"
+            messageBubble.innerHTML = `<p class="card-text">${messageInput.value}</p>`
+            chatContainer.append(messageBubble)
+
             conn.send(messageInput.value)
             messageInput.value = ""
         }
