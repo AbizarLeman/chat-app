@@ -116,6 +116,10 @@
                                                         <label class="form-label">Hobby:</label>
                                                         <input disabled class="form-control" type="text" name="hobby" value="<?php echo $profile->hobby; ?>">
                                                     </div>
+                                                    <div class="col-12" style="margin-top: 1rem;">
+                                                        <label class="form-label">Self Description:</label>
+                                                        <input disabled class="form-control" type="text" name="self_description" value="<?php echo $profile->self_description; ?>">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

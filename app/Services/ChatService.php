@@ -3,12 +3,15 @@
 namespace App\Services;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
+use App\Entities\MessageEntity;
 
 class ChatService implements MessageComponentInterface {
     protected $connections;
+    protected $message_service;
 
     public function __construct() {
         $this->connections = new \SplObjectStorage;
+        $this->message_service = new MessageService;
     }
 
     public function onOpen(ConnectionInterface $connection) {
@@ -17,9 +20,9 @@ class ChatService implements MessageComponentInterface {
         $querry_array = [];
         parse_str($querry_string, $querry_array);
 
-        $sender_user_account_id = $querry_array['sender_user_account_id'];
+        $sender_user_account_id = intval($querry_array['sender_user_account_id']);
         $connection->sender_user_account_id = $sender_user_account_id;
-        $receiver_user_account_id = $querry_array['receiver_user_account_id'];
+        $receiver_user_account_id = intval($querry_array['receiver_user_account_id']);
         $connection->receiver_user_account_id = $receiver_user_account_id;
 
         $this->connections->attach($connection);
@@ -30,6 +33,12 @@ class ChatService implements MessageComponentInterface {
     public function onMessage(ConnectionInterface $from, $msg) {
         foreach ($this->connections as $connection) {
             if ($from !== $connection && $from->receiver_user_account_id === $connection->sender_user_account_id) {
+                $messageEntitiy = new MessageEntity;
+                $messageEntitiy->sender_user_account_id = $from->sender_user_account_id;
+                $messageEntitiy->receiver_user_account_id = $from->receiver_user_account_id;
+                $messageEntitiy->message = $msg;
+
+                $this->message_service->createMessage($messageEntitiy);
                 $connection->send($msg);
             }
         }

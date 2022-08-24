@@ -25,7 +25,7 @@
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title">'.$profile->ubd_programme.'</h5>
-                                        <p class="card-text">'.$profile->hobby.'</p>
+                                        <p class="card-text">'.$profile->self_description.'</p>
                                         <a href="'.site_url('Chat/'.$profile->profile_id).'" class="btn btn-dark">Chat now!</a>
                                     </div>
                                 </div>

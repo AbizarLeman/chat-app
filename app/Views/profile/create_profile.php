@@ -64,6 +64,10 @@
                     <label class="form-label">Hobby:</label>
                     <input class="form-control" type="text" name="hobby">
                 </div>
+                <div class="col-12">
+                    <label class="form-label">Self Description:</label>
+                    <input class="form-control" type="text" name="self_description">
+                </div>
             </div>
             <div class="row" style="margin: 2vh; margin-top: 5rem;">
                 <div class="col-md-4"></div>

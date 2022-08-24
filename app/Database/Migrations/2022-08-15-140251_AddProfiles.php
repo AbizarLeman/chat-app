@@ -51,6 +51,10 @@ class AddProfiles extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
+            'self_description' => [
+                'type'       => 'VARCHAR',
+                'constraint' => 320,
+            ],
             'created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
         ]);
         $this->forge->addKey('profile_id', true);

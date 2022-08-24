@@ -20,6 +20,7 @@ class ProfileModel extends Model
         'email',
         'ubd_programme',
         'hobby',
+        'self_description',
         'created_at'
     ];
 
