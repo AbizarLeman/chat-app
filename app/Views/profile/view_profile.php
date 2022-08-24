@@ -23,57 +23,64 @@
                     <input disabled class="form-control" type="date" name="date_of_birth" value="<?php echo $profile->date_of_birth; ?>">
                 </div>
             </div>
+            <hr style="border-top: 1px solid #bbb;">
             <div class="row" style="margin-left: 1rem;margin-right: 1rem;">
-                <div class="col accordion" id="accordionExample" style="margin-top: 2rem;">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <label class="form-label"><h3>Contact</h3></label>
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-4" style="margin-top: 1rem;">
-                                        <label class="form-label">Address:</label>
-                                        <input disabled class="form-control" type="text" name="address" value="<?php echo $profile->address; ?>">
-                                    </div>
-                                    <div class="col-md-4" style="margin-top: 1rem;">
-                                        <label class="form-label">Phone Number:</label>
-                                        <input disabled class="form-control" type="text" name="phone_number" value="<?php echo $profile->phone_number; ?>">
-                                    </div>
-                                    <div class="col-md-4" style="margin-top: 1rem;">
-                                        <label class="form-label">Email:</label>
-                                        <input disabled class="form-control" type="email" name="email" value="<?php echo $profile->email; ?>">
+                <div class="col-md-6" style="margin-top: 1rem;">
+                    <div class="accordion" id="contactAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Contact
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#contactAccordion">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-12" style="margin-top: 1rem;">
+                                            <label class="form-label">Address:</label>
+                                            <input disabled class="form-control" type="text" name="address" value="<?php echo $profile->address; ?>">
+                                        </div>
+                                        <div class="col-12" style="margin-top: 1rem;">
+                                            <label class="form-label">Phone Number:</label>
+                                            <input disabled class="form-control" type="text" name="phone_number" value="<?php echo $profile->phone_number; ?>">
+                                        </div>
+                                        <div class="col-12" style="margin-top: 1rem;">
+                                            <label class="form-label">Email:</label>
+                                            <input disabled class="form-control" type="email" name="email" value="<?php echo $profile->email; ?>">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <label class="form-label"><h3>Biography</h3></label>
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-4" style="margin-top: 1rem;">
-                                        <label class="form-label">Nationality:</label>
-                                        <input disabled class="form-control" type="text" name="nationality" value="<?php echo $profile->nationality; ?>">
-                                    </div>
-                                    <div class="col-md-4" style="margin-top: 1rem;">
-                                        <label class="form-label">UBD Programme:</label>
-                                        <input disabled class="form-control" type="text" name="ubd_programme" value="<?php echo $profile->ubd_programme; ?>">
-                                    </div>
-                                    <div class="col-md-4" style="margin-top: 1rem;">
-                                        <label class="form-label">Hobby:</label>
-                                        <input disabled class="form-control" type="text" name="hobby" value="<?php echo $profile->hobby; ?>">
-                                    </div>
-                                    <div class="col-12" style="margin-top: 1rem;">
-                                        <label class="form-label">Self Description:</label>
-                                        <input disabled class="form-control" type="text" name="self_description" value="<?php echo $profile->self_description; ?>">
+                </div>
+                <div class="col-md-6" style="margin-top: 1rem;">
+                    <div class="accordion" id="biographyAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Biography
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#biographyAccordion">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-12" style="margin-top: 1rem;">
+                                            <label class="form-label">Nationality:</label>
+                                            <input disabled class="form-control" type="text" name="nationality" value="<?php echo $profile->nationality; ?>">
+                                        </div>
+                                        <div class="col-12" style="margin-top: 1rem;">
+                                            <label class="form-label">UBD Programme:</label>
+                                            <input disabled class="form-control" type="text" name="ubd_programme" value="<?php echo $profile->ubd_programme; ?>">
+                                        </div>
+                                        <div class="col-12" style="margin-top: 1rem;">
+                                            <label class="form-label">Hobby:</label>
+                                            <input disabled class="form-control" type="text" name="hobby" value="<?php echo $profile->hobby; ?>">
+                                        </div>
+                                        <div class="col-12" style="margin-top: 1rem;">
+                                            <label class="form-label">Self Description:</label>
+                                            <input disabled class="form-control" type="text" name="self_description" value="<?php echo $profile->self_description; ?>">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

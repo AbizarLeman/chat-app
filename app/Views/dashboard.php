@@ -22,7 +22,7 @@
                             <ul>
                                 <li>First, create a profile in the Profile page.</li>
                                 <li>After creating the profile, you can now view and edit your personal details.</li>
-                                <li>Chat feature will be available after your profile has been created.</li>
+                                <li>Chat feature will only be available after your profile has been created.</li>
                                 <li>To began chatting, browse through the profile list in the Live Chat page.</li>
                                 <li>Click the "Chat now!" button on the profile of the person you want to chat with.</li>
                             </ul>
