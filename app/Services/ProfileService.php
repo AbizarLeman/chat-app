@@ -9,7 +9,7 @@ interface ProfileServiceInterface {
     public function createProfile($profile_entity);
     public function getAllProfile();
     public function getProfileByUserAccountID($user_account_id);
-    public function updateProfile($profile_entity): bool;
+    public function updateProfile($profile_entity);
 }
 
 class ProfileService implements ProfileServiceInterface {
@@ -65,7 +65,13 @@ class ProfileService implements ProfileServiceInterface {
         }
     }
 
-    public function updateProfile($profile_entity) : bool {
-        return $this->profile_model->update($profile_entity->profile_id, $profile_entity);
+    public function updateProfile($profile_entity) {
+        $result = $this->profile_model->update($profile_entity->profile_id, $profile_entity);
+
+        if (empty($this->profile_model->errors())) {
+            return $result;
+        } else {
+            return $this->profile_model->errors();
+        }
     }
 }

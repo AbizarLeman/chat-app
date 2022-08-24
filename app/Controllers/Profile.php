@@ -71,11 +71,14 @@ class Profile extends BaseController
             $profile_entity = $profile_entity->fill($this->request->getPost());
             $profile_entity->user_account_id = $this->session->session_data['user_account_id'];
 
-            if ($this->profile_service->updateProfile($profile_entity)) {
+            $result = $this->profile_service->updateProfile($profile_entity);
+
+            if ($result === true) {
                 return redirect()->to('/Profile');
             } else {
-                //TODO: Add error message
-                return view('profile/edit_profile');
+                $profile = $this->profile_service->getProfileByUserAccountID($this->session->session_data['user_account_id']);
+
+                return view('profile/edit_profile', ['profile' => $profile, 'errors' => $result]);
             }
         }
 

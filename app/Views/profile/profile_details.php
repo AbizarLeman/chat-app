@@ -53,11 +53,24 @@
                             <div class="row">
                                 <div class="col-12" style="margin-top: 1rem;">
                                     <label class="form-label">Nationality:</label>
-                                    <input disabled class="form-control" type="text" name="nationality" value="<?php echo $profile->nationality; ?>">
+                                    <select id="nationalityInput" disabled class="form-control" name="nationality" value="<?php echo $profile->nationality; ?>">
+                                        <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                        <option value="Indonesia">Indonesia</option>
+                                        <option value="Malaysia">Malaysia</option>
+                                        <option value="Singapore">Singapore</option>
+                                        <option value="The Philippines">The Philippines</option>
+                                    </select>
                                 </div>
                                 <div class="col-12" style="margin-top: 1rem;">
                                     <label class="form-label">UBD Programme:</label>
-                                    <input disabled class="form-control" type="text" name="ubd_programme" value="<?php echo $profile->ubd_programme; ?>">
+                                    <select id="programmeInput" disabled class="form-control" name="ubd_programme" value="<?php echo $profile->ubd_programme; ?>">
+                                        <option value="Computer Science">Computer Science</option>
+                                        <option value="Biology">Biology</option>
+                                        <option value="Mathematics">Mathematics</option>
+                                        <option value="Chemistry">Chemistry</option>
+                                        <option value="Business Administration">Business Administration</option>
+                                        <option value="Dentistry">Dentistry</option>
+                                    </select>
                                 </div>
                                 <div class="col-12" style="margin-top: 1rem;">
                                     <label class="form-label">Hobby:</label>
@@ -75,3 +88,13 @@
         </div>
     </div>
 </form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        const nationalityInput = document.getElementById('nationalityInput')
+        const programmeInput = document.getElementById('programmeInput')
+
+        nationalityInput.value = "<?php echo $profile->nationality; ?>"
+        programmeInput.value = "<?php echo $profile->ubd_programme; ?>"
+    })
+</script>
