@@ -81,7 +81,7 @@ With dependencies installed and our project folder ready for us to start coding,
    export default {
      root: path.resolve(__dirname, 'src'),
      server: {
-       port: 4567,
+       port: 8080,
        hot: true
      }
    }
@@ -148,7 +148,7 @@ In the next and final section to this guide, we’ll import all of Bootstrap’s
        }
      },
      server: {
-       port: 4567,
+       port: 8080,
        hot: true
      }
    }

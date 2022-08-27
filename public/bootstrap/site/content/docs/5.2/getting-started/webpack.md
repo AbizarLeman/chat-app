@@ -87,7 +87,7 @@ With dependencies installed and our project folder ready for us to start coding,
      },
      devServer: {
        static: path.resolve(__dirname, 'dist'),
-       port: 4567,
+       port: 8080,
        hot: true
      }
    }
@@ -155,7 +155,7 @@ Importing Bootstrap into Webpack requires the loaders we installed in the first 
      },
      devServer: {
        static: path.resolve(__dirname, 'dist'),
-       port: 4567,
+       port: 8080,
        hot: true
      },
      module: {
