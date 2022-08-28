@@ -15,7 +15,7 @@ Chat App - Live Chat
     </div>
     <hr style="border-top: 3px solid #bbb;">
     <div class="row d-flex justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-body" style="max-height: 60vh;overflow: auto;" id="chatBox">
                     <h5 class="card-title text-center">Chat History</h5>
@@ -65,12 +65,12 @@ Chat App - Live Chat
         </div>
     </div>
     <div class="row d-flex justify-content-center">
-        <div class="col-md-4 mt-3">
+        <div class="col-md-2 mt-3">
             <div class="d-grid">
                 <button class="btn" type="button" onclick="showModal()" style="background-color: #A21441; color: white;">View Profile</button>
             </div>
         </div>
-        <div class="col-md-4 mt-3">
+        <div class="col-md-2 mt-3">
             <div class="d-grid">
                 <button class="btn" type="button" onclick="location.href='<?php echo site_url('Chat'); ?>'" style="background-color: #A21441; color: white;">Back</button>
             </div>
