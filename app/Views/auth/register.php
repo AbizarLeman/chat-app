@@ -27,11 +27,6 @@
                 <form action="<?= url_to('register') ?>" method="post">
                     <?= csrf_field() ?>
 
-                    <!-- Email -->
-                    <div class="mb-2">
-                        <input type="email" class="form-control" name="email" inputmode="email" autocomplete="email" placeholder="<?= lang('Auth.email') ?>" value="<?= old('email') ?>" required />
-                    </div>
-
                     <!-- Username -->
                     <div class="mb-4">
                         <input type="text" class="form-control" name="username" inputmode="text" autocomplete="username" placeholder="<?= lang('Auth.username') ?>" value="<?= old('username') ?>" required />

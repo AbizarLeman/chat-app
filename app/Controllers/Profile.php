@@ -10,9 +10,9 @@ class Profile extends BaseController
     protected $session;
     protected $profile_service;
 
-    public function __construct($_profile_service = new ProfileService()) {
+    public function __construct() {
         $this->session = \Config\Services::session();
-        $this->profile_service = $_profile_service;
+        $this->profile_service = new ProfileService;
     }
     
     public function index()
