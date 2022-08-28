@@ -26,6 +26,8 @@ class App extends BaseConfig
      */
     public $baseURL;
 
+    public $websocketURL;
+
     /**
      * --------------------------------------------------------------------------
      * Index File
@@ -110,7 +112,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $appTimezone = 'America/Chicago';
+    public $appTimezone = 'Asia/Brunei';
 
     /**
      * --------------------------------------------------------------------------
@@ -467,5 +469,6 @@ class App extends BaseConfig
     public function __construct()
     {
       $this->baseURL = getenv('app.baseURL');
+      $this->websocketURL = getenv('websocketURL.baseURL');
     }
 }

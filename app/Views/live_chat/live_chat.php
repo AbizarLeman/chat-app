@@ -87,7 +87,7 @@ Chat App - Live Chat
     </div>
 </div>
 <script>
-    const conn = new WebSocket('ws://localhost:9788?sender_user_account_id=<?php echo (isset($user_account_id)) ? $user_account_id : null; ?>&receiver_user_account_id=<?php echo (isset($profile->user_account_id)) ? $profile->user_account_id : null; ?>')
+    const conn = new WebSocket('<?php echo getenv('app.websocketURL'); ?>?sender_user_account_id=<?php echo (isset($user_account_id)) ? $user_account_id : null; ?>&receiver_user_account_id=<?php echo (isset($profile->user_account_id)) ? $profile->user_account_id : null; ?>')
     const messageInput = document.getElementById("messageInput")
     const chatContainer = document.getElementById("chatContainer")
 
