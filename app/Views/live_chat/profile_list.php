@@ -5,7 +5,7 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-    <div class="container" style="margin-bottom: 20vh;">
+    <div class="container primary-color" style="margin-bottom: 20vh;">
         <div class="row d-flex flex-row">
             <div class="col-md text-center">
                 <div style="margin: 2vh;"><h1>Live Chat</h1></div>
@@ -20,13 +20,15 @@
                         echo '
                             <div class="col-md-4 text-center">
                                 <div class="card text-center">
-                                    <div class="card-header">
+                                    <div class="card-header text-white" style="background-color: #A21441;">
                                         '.$profile->fullname.'
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title">'.$profile->ubd_programme.'</h5>
                                         <p class="card-text">'.$profile->self_description.'</p>
-                                        <a href="'.site_url('Chat/'.$profile->profile_id).'" class="btn btn-dark">Chat now!</a>
+                                        <div class="d-grid gap-2">
+                                            <a href="'.site_url('Chat/'.$profile->profile_id).'" class="btn" style="background-color: #14A275;color: white;">Chat now!</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

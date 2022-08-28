@@ -8,22 +8,22 @@
     <title><?= $this->renderSection('title') ?></title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg" style="background-color: #A21441;">
         <div class="container-fluid">
-        <a class="navbar-brand" href="<?php echo site_url('/')?>">Chat App</a>
+        <a class="navbar-brand text-white" href="<?php echo site_url('/')?>">Chat App</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?php echo site_url('/')?>">Dashboard</a>
+                    <a class="nav-link active text-white" aria-current="page" href="<?php echo site_url('/')?>">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?php echo site_url('/Profile')?>">Profile</a>
+                    <a class="nav-link active text-white" aria-current="page" href="<?php echo site_url('/Profile')?>">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="<?php echo site_url('/Chat')?>">Live Chat</a>
+                    <a class="nav-link active text-white" href="<?php echo site_url('/Chat')?>">Live Chat</a>
                 </li>
             </ul>
             <div class="d-flex">

@@ -1,10 +1,17 @@
-<?= $this->extend(config('Auth')->views['layout']) ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<?= $this->section('title') ?><?= lang('Auth.register') ?> <?= $this->endSection() ?>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="<?php echo base_url('bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link type="text/css" href="<?php echo base_url('style.css'); ?>" rel="stylesheet">
+    <title>Register</title>
+</head>
 
-<?= $this->section('main') ?>
-
-    <div class="container d-flex justify-content-center p-5">
+<body>
+    <div class="container d-flex justify-content-center p-5 primary-color">
         <div class="card col-12 col-md-5 shadow-sm">
             <div class="card-body">
                 <h5 class="card-title mb-5"><?= lang('Auth.register') ?></h5>
@@ -42,8 +49,8 @@
                         <input type="password" class="form-control" name="password_confirm" inputmode="text" autocomplete="new-password" placeholder="<?= lang('Auth.passwordConfirm') ?>" required />
                     </div>
 
-                    <div class="d-grid col-12 col-md-8 mx-auto m-3">
-                        <button type="submit" class="btn btn-dark btn-block"><?= lang('Auth.register') ?></button>
+                    <div class="d-grid">
+                        <button class="btn" type="submit" style="background-color: #A21441; color: white;"><?= lang('Auth.register') ?></button>
                     </div>
 
                     <p class="text-center"><?= lang('Auth.haveAccount') ?> <a href="<?= url_to('login') ?>"><?= lang('Auth.login') ?></a></p>
@@ -52,5 +59,12 @@
             </div>
         </div>
     </div>
+</body>
 
-<?= $this->endSection() ?>
+<style>
+    body {
+        background-color: #14A275;
+    }
+</style>
+
+</html>

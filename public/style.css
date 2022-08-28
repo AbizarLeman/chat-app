@@ -44,3 +44,31 @@ pre {
     border-radius: 20px;
     border: 3px solid var(--scroll-bar-bg-color);
 }
+
+.primary-color {
+    color: #A21441;
+}
+
+.secondary-color {
+    color: #14A275;
+}
+
+.text-field-color {
+    color: #696969;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #14A275;
+    background-color: white;
+}
+
+.accordion-button.collapsed {
+    color: #14A275;
+    background-color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    color: #14A275;
+    background-color: white;
+}

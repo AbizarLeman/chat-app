@@ -5,7 +5,7 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-    <div class="container" style="margin-bottom: 20vh;">
+    <div class="container primary-color" style="margin-bottom: 20vh;">
         <div class="row d-flex flex-row">
             <div class="col-md text-center">
                 <div style="margin: 2vh;"><h1>Welcome to Chat App!</h1></div>
@@ -15,10 +15,11 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
                 <div class="card">
+                    <div class="card-header" style="background-color: #A21441;">
+                        <h5 class="card-title text-center text-white">How to use Chat App?</h5>
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">How to use Chat App?</h5>
-                        <hr style="border-top: 1px solid #bbb;">
-                        <div class="card-text">
+                        <div class="card-text text-field-color">
                             <ul>
                                 <li>First, create a profile in the Profile page.</li>
                                 <li>After creating the profile, you can now view and edit your personal details.</li>

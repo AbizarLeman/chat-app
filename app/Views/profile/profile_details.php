@@ -1,12 +1,12 @@
 <form>
     <div class="row" style="margin-left: 1rem;margin-right: 1rem;">
         <div class="col-md-6" style="margin-top: 1rem;">
-            <label class="form-label">Fullname:</label>
-            <input disabled class="form-control" type="text" name="fullname" value="<?php echo $profile->fullname; ?>">
+            <label class="form-label secondary-color">Fullname:</label>
+            <input style="background-color: #f7f7f5;" disabled class="form-control text-field-color" type="text" name="fullname" value="<?php echo $profile->fullname; ?>">
         </div>
         <div class="col-md-6" style="margin-top: 1rem;">
-            <label class="form-label">Date of Birth:</label>
-            <input disabled class="form-control" type="date" name="date_of_birth" value="<?php echo $profile->date_of_birth; ?>">
+            <label class="form-label secondary-color">Date of Birth:</label>
+            <input style="background-color: #f7f7f5;" disabled class="form-control text-field-color" type="date" name="date_of_birth" value="<?php echo $profile->date_of_birth; ?>">
         </div>
     </div>
     <hr style="border-top: 1px solid #bbb;">
@@ -23,16 +23,16 @@
                         <div class="accordion-body">
                             <div class="row">
                                 <div class="col-12" style="margin-top: 1rem;">
-                                    <label class="form-label">Address:</label>
-                                    <input disabled class="form-control" type="text" name="address" value="<?php echo $profile->address; ?>">
+                                    <label class="form-label secondary-color">Address:</label>
+                                    <input style="background-color: #f7f7f5;" disabled class="form-control text-field-color" type="text" name="address" value="<?php echo $profile->address; ?>">
                                 </div>
                                 <div class="col-12" style="margin-top: 1rem;">
-                                    <label class="form-label">Phone Number:</label>
-                                    <input disabled class="form-control" type="text" name="phone_number" value="<?php echo $profile->phone_number; ?>">
+                                    <label class="form-label secondary-color">Phone Number:</label>
+                                    <input style="background-color: #f7f7f5;" disabled class="form-control text-field-color" type="text" name="phone_number" value="<?php echo $profile->phone_number; ?>">
                                 </div>
                                 <div class="col-12" style="margin-top: 1rem;">
-                                    <label class="form-label">Email:</label>
-                                    <input disabled class="form-control" type="email" name="email" value="<?php echo $profile->email; ?>">
+                                    <label class="form-label secondary-color">Email:</label>
+                                    <input style="background-color: #f7f7f5;" disabled class="form-control text-field-color" type="email" name="email" value="<?php echo $profile->email; ?>">
                                 </div>
                             </div>
                         </div>
@@ -52,8 +52,8 @@
                         <div class="accordion-body">
                             <div class="row">
                                 <div class="col-12" style="margin-top: 1rem;">
-                                    <label class="form-label">Nationality:</label>
-                                    <select id="nationalityInput" disabled class="form-control" name="nationality" value="<?php echo $profile->nationality; ?>">
+                                    <label class="form-label secondary-color">Nationality:</label>
+                                    <select style="background-color: #f7f7f5;" id="nationalityInput" disabled class="form-control text-field-color" name="nationality" value="<?php echo $profile->nationality; ?>">
                                         <option value="Brunei Darussalam">Brunei Darussalam</option>
                                         <option value="Indonesia">Indonesia</option>
                                         <option value="Malaysia">Malaysia</option>
@@ -62,8 +62,8 @@
                                     </select>
                                 </div>
                                 <div class="col-12" style="margin-top: 1rem;">
-                                    <label class="form-label">UBD Programme:</label>
-                                    <select id="programmeInput" disabled class="form-control" name="ubd_programme" value="<?php echo $profile->ubd_programme; ?>">
+                                    <label class="form-label secondary-color">UBD Programme:</label>
+                                    <select style="background-color: #f7f7f5;" id="programmeInput" disabled class="form-control text-field-color" name="ubd_programme" value="<?php echo $profile->ubd_programme; ?>">
                                         <option value="Computer Science">Computer Science</option>
                                         <option value="Biology">Biology</option>
                                         <option value="Mathematics">Mathematics</option>
@@ -73,12 +73,12 @@
                                     </select>
                                 </div>
                                 <div class="col-12" style="margin-top: 1rem;">
-                                    <label class="form-label">Hobby:</label>
-                                    <input disabled class="form-control" type="text" name="hobby" value="<?php echo $profile->hobby; ?>">
+                                    <label class="form-label secondary-color">Hobby:</label>
+                                    <input style="background-color: #f7f7f5;" disabled class="form-control text-field-color" type="text" name="hobby" value="<?php echo $profile->hobby; ?>">
                                 </div>
                                 <div class="col-12" style="margin-top: 1rem;">
-                                    <label class="form-label">Self Description:</label>
-                                    <input disabled class="form-control" type="text" name="self_description" value="<?php echo $profile->self_description; ?>">
+                                    <label class="form-label secondary-color">Self Description:</label>
+                                    <input style="background-color: #f7f7f5;" disabled class="form-control text-field-color" type="text" name="self_description" value="<?php echo $profile->self_description; ?>">
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
 </form>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function(event) { 
+    document.addEventListener("DOMContentLoaded", function(event) {
         const nationalityInput = document.getElementById('nationalityInput')
         const programmeInput = document.getElementById('programmeInput')
 
