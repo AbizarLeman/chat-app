@@ -38,11 +38,11 @@ Chat App - Live Chat
                                 }
 
                                 echo '
-                                            <div style="position: relative;' . $position . ';width: 60%;color: white;background-color: ' . $color . ';margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;">
-                                                <p class="card-text">' . $message->message . '</p>
-                                                <p class="card-text" style="font-size: 0.7rem;">' . date_format($date, "m/d/Y H:i") . '</p>
-                                            </div>
-                                        ';
+                                    <div style="position: relative;'.$position.';max-width: 60%;color: white;background-color: '.$color.';margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;">
+                                        <p class="card-text">' . $message->message . '</p>
+                                        <p class="card-text" style="font-size: 0.7rem;">'.date_format($date, "m/d/Y H:i").'</p>
+                                    </div>
+                                ';
                             }
                         } else {
                             echo '<p class="card-text text-center" style="color: grey;">Say hi to ' . $profile->fullname . '!</p>';

@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost:8080/';
+    public $baseURL;
 
     /**
      * --------------------------------------------------------------------------
@@ -463,4 +463,9 @@ class App extends BaseConfig
      * @var bool
      */
     public $CSPEnabled = false;
+
+    public function __construct()
+    {
+      $this->baseURL = getenv('app.baseURL');
+    }
 }
