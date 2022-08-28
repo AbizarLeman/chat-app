@@ -20,7 +20,7 @@ Chat App - Live Chat
                 <div class="card-body" style="max-height: 60vh;overflow: auto;" id="chatBox">
                     <h5 class="card-title text-center">Chat History</h5>
                     <hr style="border-top: 1px solid #bbb;">
-                    <div class="row d-flex justify-content-center" id="chatContainer">
+                    <div class="container" id="chatContainer">
                         <?php
                         if (!empty($messages)) {
                             $position = "";
@@ -30,17 +30,21 @@ Chat App - Live Chat
                                 $date = date_create($message->created_at);
 
                                 if ($message->receiver_user_account_id == $user_account_id) {
-                                    $position = "left: -15%;";
+                                    $position = "float-start";
                                     $color = "#14A275";
                                 } else {
-                                    $position = "left: 15%;";
+                                    $position = "float-end";
                                     $color = "#A21441";
                                 }
 
                                 echo '
-                                    <div style="position: relative;'.$position.';max-width: 60%;color: white;background-color: '.$color.';margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;">
-                                        <p class="card-text">' . $message->message . '</p>
-                                        <p class="card-text" style="font-size: 0.7rem;">'.date_format($date, "m/d/Y H:i").'</p>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="'.$position.'" style="max-width:60%;color: white;background-color: '.$color.';margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;">
+                                                <p class="card-text">'. $message->message.'</p>
+                                                <p class="card-text" style="font-size: 0.7rem;">'.date_format($date, "m/d/Y H:i").'</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 ';
                             }
@@ -106,8 +110,8 @@ Chat App - Live Chat
 
         const messageBubble = document.createElement("div")
 
-        messageBubble.style.cssText = "position: relative;left: -15%;width: 60%;color: white;background-color: #14A275;margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;"
-        messageBubble.innerHTML = `<p class="card-text">${e.data}</p><p class="card-text" style="font-size: 0.7rem;">${currentDateString}</p>`
+        messageBubble.classList.add("row")
+        messageBubble.innerHTML = `<div class="col-12"><div class="float-start" style="max-width: 60%;color: white;background-color: #14A275;margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;"><p class="card-text">${e.data}</p><p class="card-text" style="font-size: 0.7rem;">${currentDateString}</p></div></div>`
         chatContainer.append(messageBubble)
         setScrollOnBottom()
     }
@@ -119,8 +123,8 @@ Chat App - Live Chat
 
             const messageBubble = document.createElement("div")
 
-            messageBubble.style.cssText = "position: relative;left: 15%;width: 60%;color: white;background-color: #A21441;margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;"
-            messageBubble.innerHTML = `<p class="card-text">${messageInput.value}</p><p class="card-text" style="font-size: 0.7rem;">${currentDateString}</p>`
+            messageBubble.classList.add("row")
+            messageBubble.innerHTML = `<div class="col-12"><div class="float-end" style="max-width: 60%;color: white;background-color: #A21441;margin-top: 1rem;padding: 1rem;border-radius: 0.5rem;"><p class="card-text">${messageInput.value}</p><p class="card-text" style="font-size: 0.7rem;">${currentDateString}</p></div></div>`
             chatContainer.append(messageBubble)
 
             conn.send(messageInput.value)
