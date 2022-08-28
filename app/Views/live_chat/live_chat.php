@@ -17,8 +17,10 @@ Chat App - Live Chat
     <div class="row d-flex justify-content-center">
         <div class="col-md-4">
             <div class="card">
+                <div class="card-header" style="background-color: #A21441;">
+                    <h5 class="card-title text-white text-center">Chat History</h5>
+                </div>
                 <div class="card-body" style="max-height: 60vh;overflow: auto;" id="chatBox">
-                    <h5 class="card-title text-center">Chat History</h5>
                     <hr style="border-top: 1px solid #bbb;">
                     <div class="container" id="chatContainer">
                         <?php

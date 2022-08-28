@@ -18,7 +18,7 @@
                 foreach ($profiles as $profile) {
                     if ($profile->user_account_id != $user_account_id) {
                         echo '
-                            <div class="col-md-4 text-center">
+                            <div class="col-md-4 text-center mt-3">
                                 <div class="card text-center">
                                     <div class="card-header text-white" style="background-color: #A21441;">
                                         '.$profile->fullname.'
