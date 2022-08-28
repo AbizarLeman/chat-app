@@ -5,7 +5,8 @@
 Chat App is a simple chat application built to demonstrate the usage of MVC architecture in building CRUD applications and websocket for real-time communication.
 
 ![image](https://user-images.githubusercontent.com/56353860/187077741-8035a14d-8b5a-47e2-ade9-bf65d137cf1f.png)
-![image](https://user-images.githubusercontent.com/56353860/187078025-f3f4abae-b520-4360-ac64-42554f4773d6.png)
+![image](https://user-images.githubusercontent.com/56353860/187078161-f3b32235-115d-45ca-b118-21bf9ff7f8d6.png)
+
 
 ## Database
 
