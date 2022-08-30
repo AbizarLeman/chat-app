@@ -39,4 +39,4 @@ It is also possible to host the application on XAMPP by placing the project fold
 
 To allow real-time communication, a separate process handling websocket communication needs to be run. Run the following command inside the `public` folder of the project:
 
-`php index.php serve`
+`php index.php server`
