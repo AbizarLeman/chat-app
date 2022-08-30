@@ -25,7 +25,6 @@ One of the way to setup local database is using XAMPP.
 
 - Run `composer install` in the project directory.
 - Run `php spark migrate --all`.
-- Run `php spark shield:setup`.
 
 ## Running on Localhost
 
@@ -37,4 +36,4 @@ It is also possible to host the application on XAMPP by placing the project fold
 
 To allow real-time communication, a separate process handling websocket communication needs to be run. Run the following command inside the `public` folder of the project:
 
-`php index.php`
+`php index.php serve`
