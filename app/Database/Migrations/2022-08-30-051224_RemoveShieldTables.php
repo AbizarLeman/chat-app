@@ -14,7 +14,6 @@ class RemoveShieldTables extends Migration
         $this->forge->dropTable('auth_permissions_users');
         $this->forge->dropTable('auth_remember_tokens');
         $this->forge->dropTable('auth_token_logins');
-        $this->forge->dropTable('settings');
         $this->forge->dropTable('users');
     }
 
