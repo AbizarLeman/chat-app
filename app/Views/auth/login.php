@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" href="<?php echo base_url('bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link type="text/css" href="<?php echo base_url('bootstrap.min.css'); ?>" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url('style.css'); ?>" rel="stylesheet">
     <title>Login</title>
 </head>
