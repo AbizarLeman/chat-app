@@ -20,7 +20,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Server');
+$routes->setDefaultController('Dashboard');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -55,6 +55,7 @@ $routes->get('/logout', 'Auth\LoginController::logoutAction');
 // $routes->get('/verify', 'Auth\MagicLinkController::verify');
 
 $routes->get('/', 'Dashboard::index');
+$routes->cli('server', 'Server::index');
 
 $routes->get('/Profile', 'Profile::index');
 $routes->post('/Profile/Save', 'Profile::save');
